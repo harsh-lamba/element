@@ -20,7 +20,8 @@
 
 	var color = d3.scale.linear()
 	    .domain([0, n - 1])
-	    .range(["#aad", "#556"]);
+	    .range(["#F8BBD0", "#880E4F"]);
+	    //.range(["#FFF176", "#F9A825"]);
 
 	var xAxis = d3.svg.axis()
 	    .scale(x)
