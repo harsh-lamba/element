@@ -24,9 +24,9 @@
 										  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 		d3.tsv("data.tsv", function(error, data) {
-            console.log(data);
 			if (error) throw error;
 			color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
+			color.range(["#D500F9", "#FF3D00" , "#EC407A"]);
 
 			data.forEach(function(d) {
 				d.date = parseDate(d.date);
@@ -70,6 +70,7 @@
 			city.append("path")
 				.attr("class", "line")
 				.attr("d", function(d) { return line(d.values); })
+				//.style("stroke", "#fff")
 				.style("stroke", function(d) { return color(d.name); });
 
 			city.append("text")
@@ -77,6 +78,7 @@
 				.attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
 				.attr("x", 3)
 				.attr("dy", ".35em")
+				.style("fill", "white")
 				.text(function(d) { return d.name; });
 		});
 })();
