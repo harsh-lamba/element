@@ -1,0 +1,17 @@
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+/*Pie chart*/
+
+path.slice{
+    stroke-width:2px;
+}
+
+polyline{
+    opacity: .8;
+    stroke: #fff;
+    stroke-width: 1px;
+    fill: none;
+}
